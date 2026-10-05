@@ -1,0 +1,15 @@
+name: Pipeline CI DevOps IA
+
+on: [push]
+
+jobs:
+  validacion:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Ejecutar Validador
+      run: python validador_servidor.py
